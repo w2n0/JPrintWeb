@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv=X-UA-Compatible content=IE=EmulateIE7>
+  <script language="javascript" src="jquery-1.4.4.min.js"></script>
+  <script language="javascript" src="editorjs/Print.js"></script>
+  	<script language="JavaScript" src="editorjs/Canvas.1.0.1.js"></script>
+
+   <script language="JavaScript" src="editorjs/elementNode.js"></script>
+  <style type="text/css"> 
+  .content{margin:0px auto; }
+  .juzhong {margin:0px auto; width:800px; height:200px; border:1px solid #ccc;} 
+  </style>
+</head>
+<body style="align:center;margin:0px;">    
+  <div id="con" class="content" >
+   </div>
+</BODY>
+</body>
+<script language="JavaScript">
+
+window.onload=function(){
+var t={
+ id:"con",
+ jdatasource:{"ok":true,"订单":[{"买家姓名":"张三","手机号":"18514667415","联系人":"三丰","联系地址":"北京","收货地址":"北京朝阳区","卖家手机号":"13814667415","卖家联系人":"李四","卖家联系地址":"山东","卖家收货地址":"山东济宁"}],"订单明细":[{"标题":"苹果","规格":"1-1"},{"标题":"桃子","规格":"2-1"}]}	,
+ template:{"title":"汇通","backgroundImage":"url('images/kd/m201304140252184455.jpg')","printpc":10,"container":{"left":160,"top":57,"right":1600,"bottom":557,"width":1440,"height":500},"elements":[{"top":"151px","left":"637px","width":"110px","height":"29px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.买家姓名#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"792px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"149px","left":"811px","width":"120px","height":"33px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"220px","left":"611px","width":"319px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"283px","left":"439px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"265px","width":"143px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"151px","left":"450px","width":"126px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"217px","left":"271px","width":"301px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"346px","left":"240px","width":"335px","height":"53px","color":"","backgroundColor":"","id":"","textDecoration":"","fontStyle":"","fontWeight":"","tr":[{"width":"","text":"#订单明细.标题#"},{"width":"","text":"#订单明细.规格#"}]},{"top":"150px","left":"291px","width":"112px","height":"34px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系人#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""}]}
+ }; 
+ var print=new Print(t);
+}
+ function p(t)
+ {
+ var print=new Print(t);
+ }
+</script>
+</html>

@@ -1,0 +1,47 @@
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dropdown</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<script language="JavaScript" src="SystemEvent.js"></script>
+	<script language="JavaScript" src="editorjs/elementProperty.js"></script>
+	<script language="JavaScript" src="editorjs/elementNode.js"></script>
+	<script language="JavaScript" src="editorjs/Canvas.1.0.1.js"></script>
+	<script language="JavaScript" src="editorjs/TemplateEdit.js"></script>
+	<script language="JavaScript" src="editorjs/DataSource.js"></script>
+	 <script language="JavaScript" src="editorjs/Tools.js"></script>
+	 <script language="JavaScript" src="editorjs/PublicData.js"></script>
+	 <script src="jquery.min.js"></script>
+	<script src="dropdown.js"></script>
+	<script src="tooltip.js"></script>
+	<script language="javascript" src="jquery.jqprint-0.3.js"></script>
+	<script type="text/javascript" src="jquery.PrintArea.js"></script>   
+	<script src="transition.js"></script>
+	<script src="collapse.js"></script>
+	<script src="modal.js"></script>
+	<script src="layer/layer.js"></script>
+	<link href="css/ruler.css" rel="stylesheet" type="text/css" />
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head> 
+<body>
+</BODY>
+<script language="JavaScript">
+var template=new TemplateEdit({
+jdatasource:{ "json": { "订单": [ "买家姓名","手机号",  "联系人","联系地址","收货地址" ,"卖家手机号",  "卖家联系人","卖家联系地址","卖家收货地址" ],"订单明细": [ "标题","规格"] }},
+jTemplates:[{"title":"EMS","backgroundImage":"url('images/kd/ems.jpg')","printpc":10,"container":{"left":160,"top":57,"right":1600,"bottom":557,"width":1440,"height":500},"elements":[{"top":"181px","left":"654px","width":"90px","height":"16px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.买家姓名#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"182px","left":"294px","width":"90px","height":"16px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系人#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"179px","left":"473px","width":"90px","height":"16px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"248px","left":"236px","width":"329px","height":"51px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"246px","left":"592px","width":"344px","height":"51px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"180px","left":"838px","width":"90px","height":"16px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"368px","left":"228px","width":"","height":"","color":"","backgroundColor":"","id":"","textDecoration":"","fontStyle":"","fontWeight":"","tr":[{"width":"117px","text":"#订单.买家姓名#"},{"width":"116px","text":"#订单明细.标题#"},{"width":"117px","text":"#订单明细.规格#"}]}]},{"title":"顺丰快递","backgroundImage":"url('images/kd/m201304140318075632.jpg')","printpc":10,"container":{"left":160,"top":57,"right":1600,"bottom":557,"width":1440,"height":500},"elements":[{"top":"369px","left":"246px","width":"","height":"","color":"","backgroundColor":"","id":"","textDecoration":"","fontStyle":"","fontWeight":"","tr":[{"width":"","text":"#订单明细.标题#"},{"width":"","text":"#订单明细.规格#"}]},{"top":"190px","left":"328px","width":"90px","height":"16px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"186px","left":"672px","width":"204px","height":"37px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""}]},{"title":"汇通","backgroundImage":"url('images/kd/m201304140252184455.jpg')","printpc":10,"container":{"left":160,"top":57,"right":1600,"bottom":557,"width":1440,"height":500},"elements":[{"top":"151px","left":"637px","width":"110px","height":"29px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.买家姓名#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"792px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"149px","left":"811px","width":"120px","height":"33px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"220px","left":"611px","width":"319px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"283px","left":"439px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"265px","width":"143px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"151px","left":"450px","width":"126px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"217px","left":"271px","width":"301px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"346px","left":"240px","width":"335px","height":"53px","color":"","backgroundColor":"","id":"","textDecoration":"","fontStyle":"","fontWeight":"","tr":[{"width":"","text":"#订单明细.标题#"},{"width":"","text":"#订单明细.规格#"}]},{"top":"150px","left":"291px","width":"112px","height":"34px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系人#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""}]}]
+});
+window.onresize = function(){
+	template.ResetPosition();
+}
+</script> 
+</body>
+</html>	

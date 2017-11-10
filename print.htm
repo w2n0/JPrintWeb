@@ -1,0 +1,92 @@
+  
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Dropdown-打印预览</title>
+  <script language="javascript" src="jquery-1.4.4.min.js"></script>
+	<script language="JavaScript" src="editorjs/Canvas.1.0.1.js"></script>
+  <script language="javascript" src="editorjs/Print.js"></script>
+  	<script language="JavaScript" src="editorjs/elementNode.js"></script>
+  <script language="javascript" src="jquery.PrintArea.js"></script>
+          <style>
+            *{/* Basic CSS reset*/margin:0;padding:0;}
+            body{/* These styles have nothing to do with the sucaihuo*/background:url(images/dark_wood.png) 0 0 repeat;padding:0px 0 0;margin:auto;text-align:center;}
+            .sucaihuo{display:inline-block;}
+            .sucaihuo:after, .sucaihuo:before{margin-top:0.5em;content: "";float:left;border:1.5em solid #fff;}
+            .sucaihuo:after{border-right-color:transparent;}
+            .sucaihuo:before{border-left-color:transparent;}
+            .sucaihuo a:link, .sucaihuo a:visited{color:#000;text-decoration:none;float:left;height:3.5em;overflow:hidden;}
+            .sucaihuo span{background:#fff;display:inline-block;line-height:3em;padding:0 1em;margin-top:0.5em;position:relative;-webkit-transition: background-color 0.2s, margin-top 0.2s;/* Saf3.2+, Chrome*/-moz-transition: background-color 0.2s, margin-top 0.2s;/* FF4+*/-ms-transition: background-color 0.2s, margin-top 0.2s;/* IE10*/-o-transition: background-color 0.2s, margin-top 0.2s;/* Opera 10.5+*/transition: background-color 0.2s, margin-top 0.2s;}
+            .sucaihuo a:hover span{background:#FFD204;margin-top:0;}
+            .sucaihuo span:before{content: "";position:absolute;top:3em;left:0;border-right:0.5em solid #9B8651;border-bottom:0.5em solid #fff;}
+            .sucaihuo span:after{content: "";position:absolute;top:3em;right:0;border-left:0.5em solid #9B8651;border-bottom:0.5em solid #fff;}
+			.content{} 
+        </style>
+  <style media="print">
+ .noprint { display: none } 
+ .nextpage {page-break-after:always;}
+  </style>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head> 
+<body style="align:center">    
+  <div class='sucaihuo'>
+            <a href="#"  onclick="a()"><span>打印</span></a>
+        </div>
+  <div id="con" class="content" >.
+  <p class="nextpage">这里显示第一页.</p>
+<div style="page-break-after: always;"></div>
+<p>我是需要打印的内容。但是不想打印出按钮</p>
+  </div>
+</BODY>
+<script language="JavaScript">
+function  a(){
+//$("#ddd").jqprint();
+$("div#con").printArea();
+//$("div#ddd").printArea({mode:"popup",popClose:true});
+//window.print()
+}
+ function addpage(){
+ var content=document.getElementById('con');
+ var p=document.createElement('div');
+ p.setAttribute("class","nextpage");
+ content.appendChild(p);
+ }
+ var print=new Print({
+ id:"con",
+ jdatasource:{"ok":true,"订单":[{"买家姓名":"张三","手机号":"18514667415","联系人":"三丰","联系地址":"北京","收货地址":"北京朝阳区","卖家手机号":"13814667415","卖家联系人":"李四","卖家联系地址":"山东","卖家收货地址":"山东济宁"}],"订单明细":[{"标题":"苹果","规格":"1-1"},{"标题":"桃子","规格":"2-1"}]}	,
+ template:{"title":"汇通","backgroundImage":"url('images/kd/m201304140252184455.jpg')","printpc":10,"container":{"left":160,"top":57,"right":1600,"bottom":557,"width":1440,"height":500},"elements":[{"top":"151px","left":"637px","width":"110px","height":"29px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.买家姓名#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"792px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"149px","left":"811px","width":"120px","height":"33px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"220px","left":"611px","width":"319px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"283px","left":"439px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"265px","width":"143px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"151px","left":"450px","width":"126px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"217px","left":"271px","width":"301px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"346px","left":"240px","width":"335px","height":"53px","color":"","backgroundColor":"","id":"","textDecoration":"","fontStyle":"","fontWeight":"","tr":[{"width":"","text":"#订单明细.标题#"},{"width":"","text":"#订单明细.规格#"}]},{"top":"150px","left":"291px","width":"112px","height":"34px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系人#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""}]}
+ });
+ addpage();
+ new Print({
+ id:"con",
+ jdatasource:{"ok":true,"订单":[{"买家姓名":"张三","手机号":"18514667415","联系人":"三丰","联系地址":"北京","收货地址":"北京朝阳区","卖家手机号":"13814667415","卖家联系人":"李四","卖家联系地址":"山东","卖家收货地址":"山东济宁"}],"订单明细":[{"标题":"苹果","规格":"1-1"},{"标题":"桃子","规格":"2-1"}]}	,
+ template:{"title":"汇通","backgroundImage":"url('images/kd/m201304140252184455.jpg')","printpc":10,"container":{"left":160,"top":57,"right":1600,"bottom":557,"width":1440,"height":500},"elements":[{"top":"151px","left":"637px","width":"110px","height":"29px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.买家姓名#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"792px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"149px","left":"811px","width":"120px","height":"33px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"220px","left":"611px","width":"319px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"283px","left":"439px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"265px","width":"143px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"151px","left":"450px","width":"126px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"217px","left":"271px","width":"301px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"346px","left":"240px","width":"335px","height":"53px","color":"","backgroundColor":"","id":"","textDecoration":"","fontStyle":"","fontWeight":"","tr":[{"width":"","text":"#订单明细.标题#"},{"width":"","text":"#订单明细.规格#"}]},{"top":"150px","left":"291px","width":"112px","height":"34px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系人#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""}]}
+ });
+ 
+ addpage();
+ new Print({
+ id:"con",
+ jdatasource:{"ok":true,"订单":[{"买家姓名":"张三","手机号":"18514667415","联系人":"三丰","联系地址":"北京","收货地址":"北京朝阳区","卖家手机号":"13814667415","卖家联系人":"李四","卖家联系地址":"山东","卖家收货地址":"山东济宁"}],"订单明细":[{"标题":"苹果","规格":"1-1"},{"标题":"桃子","规格":"2-1"}]}	,
+ template:{"title":"汇通","backgroundImage":"url('images/kd/m201304140252184455.jpg')","printpc":10,"container":{"left":160,"top":57,"right":1600,"bottom":557,"width":1440,"height":500},"elements":[{"top":"151px","left":"637px","width":"110px","height":"29px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.买家姓名#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"792px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"149px","left":"811px","width":"120px","height":"33px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"220px","left":"611px","width":"319px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"283px","left":"439px","width":"138px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"280px","left":"265px","width":"143px","height":"28px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"151px","left":"450px","width":"126px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"217px","left":"271px","width":"301px","height":"31px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"346px","left":"240px","width":"335px","height":"53px","color":"","backgroundColor":"","id":"","textDecoration":"","fontStyle":"","fontWeight":"","tr":[{"width":"","text":"#订单明细.标题#"},{"width":"","text":"#订单明细.规格#"}]},{"top":"150px","left":"291px","width":"112px","height":"34px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#订单.卖家联系人#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""}]}
+ });
+
+ 
+//new TemplateEdit({jdatasource:{ "json": { "收货人": [ "手机号",  "联系人","联系地址","收货地址" ],"卖家信息": [ "手机号",  "联系人","联系地址","收货地址" ],"订单明细": [ "标题","规格"] }},jTemplates:[{"title":"EMS","backgroundImage":"url('images/kd/ems.jpg')","printpc":"2","elements":[{"top":"176px","left":"822px","width":"88px","height":"20px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#收货人.手机号#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"179px","left":"658px","width":"90px","height":"16px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#收货人.联系人#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"207px","left":"706px","width":"224px","height":"14px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#收货人.联系地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""},{"top":"237px","left":"670px","width":"263px","height":"26px","color":"green","backgroundColor":"rgb(204, 255, 255)","text":"#收货人.收货地址#","id":"node1","textDecoration":"","fontStyle":"","fontWeight":""}]}]});
+/*
+{"ok":true,"收货人":[{"手机号":"张三","联系人":"18514667415","联系地址":"北京","收货地址":"北京朝阳区"}],"卖家信息":[{"手机号":"李四","联系人":"13814667415","联系地址":"山东","收货地址":"山东济宁"}],"订单明细":[{"标题":"苹果","规格":"1-1"},{"标题":"桃子","规格":"2-1"}]}
+*/
+
+
+</script>
+</body>
+</html>

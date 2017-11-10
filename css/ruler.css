@@ -1,0 +1,76 @@
+html,body{
+	width:100%;margin:0 auto;font-size:12px;overflow:hidden;}
+#BGmusic {
+	position: absolute;
+	right: 30px;
+	top:30px;
+}
+#Music {
+	position: absolute;
+	overflow:hidden;
+	height:0px;
+	width:0px;
+}
+#MusicICO,#MusicPlay,#MusicStop{
+	position: absolute;
+	cursor: pointer;
+}
+#clock {
+        font-family:"Microsoft Yahei",Tahoma, Helvetica, Arial,sans-serif; 
+        color:#333333;
+	position: absolute;
+	right: 0px;
+	Bottom:0px;
+}
+
+#copyright {
+        font-family:"Verdana",Tahoma, Helvetica, Arial, sans-serif;
+        color:#333333;
+	position: absolute;
+	left: 20px;
+	Bottom:0px;
+}
+a {
+        color:#999999;
+        text-decoration:none; 
+}
+a:hover {
+        color:#333333;
+        text-decoration:none; 
+}
+
+
+.ruler {
+	background: rgba(255,255,255,1);
+	color: #444;
+
+	line-height: 14px;
+	overflow: hidden;
+}
+.ruler > div {
+	background: #444;
+}
+.hRule {
+	position: absolute;
+	width: 100%;
+	height: 18px;
+	left: 18px;
+	top: 0px;
+	background:url(../images/hRule.gif) left top no-repeat;
+
+}
+.vRule {
+	position: absolute;
+	min-height: 100%;
+	width: 18px;
+	left: 0px;
+	top: 18px;
+	background:url(../images/vRule.gif) left top no-repeat;
+
+}
+.grid {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+    background:url(../images/bg.png);
+}
